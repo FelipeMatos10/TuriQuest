@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TuriQuest - Viagem</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }
+    </style>
+</head>
+<body class="bg-gray-200 p-4 h-screen flex items-center justify-center">
+    <div class="w-full max-w-7xl h-[95vh] bg-white rounded-3xl shadow-2xl flex overflow-hidden border border-gray-100">
+        
+        <!-- Sidebar -->
+        <aside class="w-24 md:w-64 border-r border-gray-100 flex flex-col items-center py-8">
+            <div class="flex items-center justify-center mb-6 mt-4 px-4 w-full h-29">
+                <img src="LogoTuriQuest.png" alt="Logo TuriQuest" class="h-full w-auto object-contain mix-blend-multiply hidden md:block">
+                <img src="LogoTuriQuest.png" alt="Logo TQ" class="h-10 w-auto object-contain mix-blend-multiply md:hidden">
+            </div>
+
+            <nav class="flex flex-col gap-4 w-full px-4">
+                <a href="index.html" class="flex flex-col md:flex-row items-center gap-3 text-gray-500 hover:bg-gray-50 hover:text-[#9575CD] py-3 px-4 rounded-xl font-medium transition-colors">
+                    <i class="fa-solid fa-house text-xl"></i>
+                    <span class="text-sm md:text-base hidden md:block">Início</span>
+                </a>
+                <a href="explorar.html" class="flex flex-col md:flex-row items-center gap-3 text-gray-500 hover:bg-gray-50 hover:text-[#9575CD] py-3 px-4 rounded-xl font-medium transition-colors">
+                    <i class="fa-solid fa-magnifying-glass text-xl"></i>
+                    <span class="text-sm md:text-base hidden md:block">Explorar</span>
+                </a>
+                <!-- Item Ativo: Viagem -->
+                <a href="viagem.html" class="flex flex-col md:flex-row items-center gap-3 bg-[#F3E5F5] text-[#2A1A4A] py-3 px-4 rounded-xl font-bold transition-colors shadow-sm">
+                    <i class="fa-solid fa-suitcase-rolling text-xl text-[#9575CD]"></i>
+                    <span class="text-sm md:text-base hidden md:block">Viagem</span>
+                </a>
+                <a href="desafios.html" class="flex flex-col md:flex-row items-center gap-3 text-gray-500 hover:bg-gray-50 hover:text-[#9575CD] py-3 px-4 rounded-xl font-medium transition-colors">
+                    <i class="fa-solid fa-trophy text-xl"></i>
+                    <span class="text-sm md:text-base hidden md:block">Desafios</span>
+                </a>
+                <a href="perfil.html" class="flex flex-col md:flex-row items-center gap-3 text-gray-500 hover:bg-gray-50 hover:text-[#9575CD] py-3 px-4 rounded-xl font-medium transition-colors">
+                    <i class="fa-regular fa-user text-xl"></i>
+                    <span class="text-sm md:text-base hidden md:block">Perfil</span>
+                </a>
+                <a href="guia.html" class="flex flex-col md:flex-row items-center gap-3 text-gray-500 hover:bg-gray-50 hover:text-[#9575CD] py-3 px-4 rounded-xl font-medium transition-colors">
+                    <i class="fa-solid fa-leaf text-xl"></i>
+                    <span class="text-sm md:text-base hidden md:block">Guia Local</span>
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Conteúdo Principal -->
+        <main class="flex-1 flex flex-col bg-gray-50/50 relative overflow-y-auto">
+            <header class="flex justify-between items-center p-8 pb-4">
+                <h2 class="text-3xl font-bold text-[#2A1A4A]">Viagem</h2>
+                <div class="flex items-center gap-4">
+                    <div class="text-right hidden md:block">
+                        <p class="text-sm font-bold text-[#2A1A4A]">Olá, Isabella!</p>
+                        <p class="text-xs text-gray-500">Pronta para sua próxima aventura?</p>
+                    </div>
+                    <img src="https://i.pravatar.cc/150?img=47" alt="Perfil" class="w-12 h-12 rounded-full border-2 border-[#9575CD]">
+                </div>
+            </header>
+
+            <div class="px-8 pb-8 flex flex-col gap-6">
+                <!-- Roteiro Atual -->
+                <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 flex flex-col lg:flex-row gap-8">
+                    <div class="flex flex-col items-center justify-start lg:w-1/6">
+                        <p class="text-gray-400 font-semibold uppercase tracking-wider text-xs mb-2">Data</p>
+                        <p class="text-4xl font-bold text-[#2A1A4A] leading-tight text-center">12-18<br><span class="text-xl font-medium text-gray-500">ago</span></p>
+                    </div>
+
+                    <div class="flex-1 border-l-2 border-[#F3E5F5] pl-6 space-y-6 relative">
+                        <div class="flex items-start gap-4">
+                            <div class="w-7 h-7 bg-[#F3E5F5] rounded-full flex items-center justify-center text-[#9575CD] mt-0.5 z-10 -ml-[40px] ring-4 ring-white"><i class="fa-solid fa-map-pin text-xs"></i></div>
+                            <div>
+                                <p class="font-bold text-[#2A1A4A] text-sm">Visita 1</p>
+                                <p class="text-xs text-gray-500 mt-0.5">Mercado e 3 lugares de visitas</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center gap-4 bg-[#F3E5F5]/50 p-3 rounded-xl border border-[#F3E5F5] -ml-3 cursor-pointer hover:bg-[#F3E5F5] transition-colors">
+                            <div class="w-7 h-7 bg-[#9575CD] rounded-full flex items-center justify-center text-white z-10 -ml-[28px] ring-4 ring-white"><i class="fa-solid fa-map-pin text-xs"></i></div>
+                            <div class="flex-1">
+                                <p class="font-bold text-[#2A1A4A] text-sm">Visita 2</p>
+                                <p class="text-xs text-[#9575CD] mt-0.5">Conhecer 2 lugares de visitas</p>
+                            </div>
+                            <i class="fa-solid fa-chevron-right text-[#9575CD] text-sm pr-2"></i>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-7 h-7 bg-gray-100 rounded-full flex items-center justify-center text-gray-400 mt-0.5 z-10 -ml-[40px] ring-4 ring-white"><i class="fa-solid fa-map-pin text-xs"></i></div>
+                            <div>
+                                <p class="font-bold text-[#2A1A4A] text-sm">Visita 3</p>
+                                <p class="text-xs text-gray-500 mt-0.5">Elementos e 3 lugares de visitas</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="lg:w-1/3 bg-gray-50/80 rounded-xl p-5 border border-gray-100 space-y-5">
+                        <h3 class="text-sm font-bold text-[#2A1A4A] mb-2 border-b border-gray-200 pb-2">Detalhes da visita</h3>
+                        <div>
+                            <h4 class="font-semibold text-[#2A1A4A] text-sm">Receitas do mar do mundo</h4>
+                            <p class="text-xs text-gray-500 mt-1 mb-1">Restaurante · Culinária local</p>
+                            <a href="#" class="text-xs text-[#9575CD] font-bold hover:underline">Ver contato</a>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-[#2A1A4A] text-sm">Bairro da fonte</h4>
+                            <a href="#" class="text-xs text-[#9575CD] font-bold hover:underline">Ver detalhes no mapa</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Viagens Passadas -->
+                <div class="mt-4">
+                    <div class="flex justify-between items-end mb-4">
+                        <h3 class="text-lg font-bold text-[#2A1A4A]">Viagens Passadas</h3>
+                        <a href="#" class="text-sm text-[#9575CD] font-bold hover:underline">Ver todas &rarr;</a>
+                    </div>
+                    <div class="flex gap-5 overflow-x-auto pb-4">
+                        <div class="min-w-[260px] rounded-xl overflow-hidden border border-gray-100 shadow-sm bg-white cursor-pointer hover:shadow-md transition-shadow">
+                            <div class="h-28 bg-cover bg-center" style="background-image: url('https://picsum.photos/id/28/600/400');"></div>
+                            <div class="p-4">
+                                <h4 class="font-bold text-sm text-[#2A1A4A]">Rio de Janeiro, Jan 2024</h4>
+                                <div class="flex justify-between items-center mt-2">
+                                    <p class="text-xs text-gray-500">Praia e cidade maravilhosa</p>
+                                    <span class="text-yellow-400 text-xs font-bold flex items-center gap-1"><i class="fa-solid fa-star"></i> 4.9</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="min-w-[260px] rounded-xl overflow-hidden border border-gray-100 shadow-sm bg-white cursor-pointer hover:shadow-md transition-shadow">
+                            <div class="h-28 bg-cover bg-center" style="background-image: url('https://picsum.photos/id/29/600/400');"></div>
+                            <div class="p-4">
+                                <h4 class="font-bold text-sm text-[#2A1A4A]">Porto de Galinhas, Jan 2024</h4>
+                                <div class="flex justify-between items-center mt-2">
+                                    <p class="text-xs text-gray-500">Águas cristalinas e piscinas</p>
+                                    <span class="text-yellow-400 text-xs font-bold flex items-center gap-1"><i class="fa-solid fa-star"></i> 4.7</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
