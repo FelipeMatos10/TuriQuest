@@ -15,70 +15,91 @@
         ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }
     </style>
 </head>
-<body class="bg-gray-200 p-4 h-screen flex items-center justify-center">
-    <div class="w-full max-w-7xl h-[95vh] bg-white rounded-3xl shadow-2xl flex overflow-hidden border border-gray-100">
+<body class="bg-gray-200 md:p-4 h-screen flex items-center justify-center">
+    
+    <!-- Container Principal (Tela cheia no mobile, centralizado no PC) -->
+    <div class="w-full h-screen md:max-w-7xl md:h-[95vh] bg-white md:rounded-3xl shadow-2xl flex flex-col md:flex-row overflow-hidden border-none md:border border-gray-100 relative">
         
-        <!-- Sidebar -->
-        <aside class="w-24 md:w-64 border-r border-gray-100 flex flex-col items-center py-8">
+        <!-- ========================================== -->
+        <!-- SIDEBAR - MENU LATERAL (APARECE SÓ NO PC)  -->
+        <!-- ========================================== -->
+        <aside class="hidden md:flex w-64 border-r border-gray-100 flex-col items-center py-8">
             <div class="flex items-center justify-center mb-6 mt-4 px-4 w-full h-29">
-                <img src="LogoTuriQuest.png" alt="Logo TuriQuest" class="h-full w-auto object-contain mix-blend-multiply hidden md:block">
-                <img src="LogoTuriQuest.png" alt="Logo TQ" class="h-10 w-auto object-contain mix-blend-multiply md:hidden">
+                <img src="LogoTuriQuest.png" alt="Logo TuriQuest" class="h-full w-auto object-contain mix-blend-multiply">
             </div>
 
             <nav class="flex flex-col gap-4 w-full px-4">
-                <a href="index.html" class="flex flex-col md:flex-row items-center gap-3 text-gray-500 hover:bg-gray-50 hover:text-[#9575CD] py-3 px-4 rounded-xl font-medium transition-colors">
+                <a href="index.html" class="flex items-center gap-3 text-gray-500 hover:bg-gray-50 hover:text-[#9575CD] py-3 px-4 rounded-xl font-medium transition-colors">
                     <i class="fa-solid fa-house text-xl"></i>
-                    <span class="text-sm md:text-base hidden md:block">Início</span>
+                    <span class="text-base">Início</span>
                 </a>
-                <a href="explorar.html" class="flex flex-col md:flex-row items-center gap-3 text-gray-500 hover:bg-gray-50 hover:text-[#9575CD] py-3 px-4 rounded-xl font-medium transition-colors">
+                <a href="explorar.html" class="flex items-center gap-3 text-gray-500 hover:bg-gray-50 hover:text-[#9575CD] py-3 px-4 rounded-xl font-medium transition-colors">
                     <i class="fa-solid fa-magnifying-glass text-xl"></i>
-                    <span class="text-sm md:text-base hidden md:block">Explorar</span>
+                    <span class="text-base">Explorar</span>
                 </a>
-                <a href="viagem.html" class="flex flex-col md:flex-row items-center gap-3 text-gray-500 hover:bg-gray-50 hover:text-[#9575CD] py-3 px-4 rounded-xl font-medium transition-colors">
+                <a href="viagem.html" class="flex items-center gap-3 text-gray-500 hover:bg-gray-50 hover:text-[#9575CD] py-3 px-4 rounded-xl font-medium transition-colors">
                     <i class="fa-solid fa-suitcase-rolling text-xl"></i>
-                    <span class="text-sm md:text-base hidden md:block">Viagem</span>
+                    <span class="text-base">Viagem</span>
                 </a>
-                <a href="desafios.html" class="flex flex-col md:flex-row items-center gap-3 text-gray-500 hover:bg-gray-50 hover:text-[#9575CD] py-3 px-4 rounded-xl font-medium transition-colors">
+                <a href="desafios.html" class="flex items-center gap-3 text-gray-500 hover:bg-gray-50 hover:text-[#9575CD] py-3 px-4 rounded-xl font-medium transition-colors">
                     <i class="fa-solid fa-trophy text-xl"></i>
-                    <span class="text-sm md:text-base hidden md:block">Desafios</span>
+                    <span class="text-base">Desafios</span>
                 </a>
-                <a href="perfil.html" class="flex flex-col md:flex-row items-center gap-3 text-gray-500 hover:bg-gray-50 hover:text-[#9575CD] py-3 px-4 rounded-xl font-medium transition-colors">
+                <a href="perfil.html" class="flex items-center gap-3 text-gray-500 hover:bg-gray-50 hover:text-[#9575CD] py-3 px-4 rounded-xl font-medium transition-colors">
                     <i class="fa-regular fa-user text-xl"></i>
-                    <span class="text-sm md:text-base hidden md:block">Perfil</span>
+                    <span class="text-base">Perfil</span>
                 </a>
                 <!-- Item Ativo: Guia Local -->
-                <a href="guia.html" class="flex flex-col md:flex-row items-center gap-3 bg-[#F3E5F5] text-[#2A1A4A] py-3 px-4 rounded-xl font-bold transition-colors shadow-sm">
+                <a href="guia.html" class="flex items-center gap-3 bg-[#F3E5F5] text-[#2A1A4A] py-3 px-4 rounded-xl font-bold transition-colors shadow-sm">
                     <i class="fa-solid fa-leaf text-xl text-[#9575CD]"></i>
-                    <span class="text-sm md:text-base hidden md:block">Guia Local</span>
+                    <span class="text-base">Guia Local</span>
                 </a>
             </nav>
         </aside>
 
-        <!-- Conteúdo Principal -->
-        <main class="flex-1 flex flex-col bg-gray-50/50 relative overflow-y-auto">
-            <header class="flex justify-between items-center p-8 pb-4">
-                <div>
+        <!-- ========================================== -->
+        <!-- CONTEÚDO PRINCIPAL                         -->
+        <!-- ========================================== -->
+        <!-- O pb-24 serve para o conteúdo não ficar escondido atrás do menu do celular -->
+        <main class="flex-1 flex flex-col bg-gray-50/50 relative overflow-y-auto pb-24 md:pb-0">
+            
+            <!-- Header (Topo) -->
+            <header class="flex justify-between items-center p-6 md:p-8 pb-2 md:pb-4">
+                <!-- Logo no Mobile (Some no PC) -->
+                <img src="LogoTuriQuest.png" alt="Logo TQ" class="h-8 w-auto object-contain mix-blend-multiply md:hidden">
+                
+                <!-- Título no PC -->
+                <div class="hidden md:block">
                     <h2 class="text-3xl font-bold text-[#2A1A4A]">Guia Local</h2>
                     <p class="text-sm text-gray-500 mt-1">Conecte-se com especialistas da região ou fale com a nossa assistente.</p>
                 </div>
+                
                 <div class="flex items-center gap-4">
                     <div class="text-right hidden md:block">
                         <p class="text-sm font-bold text-[#2A1A4A]">Olá, Isabella!</p>
                         <p class="text-xs text-gray-500">Pronta para sua próxima aventura?</p>
                     </div>
-                    <img src="https://picsum.photos/id/64/150/150" alt="Perfil" class="w-12 h-12 rounded-full border-2 border-[#9575CD]">
+                    <img src="https://picsum.photos/id/64/150/150" alt="Perfil" class="w-10 h-10 md:w-12 md:h-12 rounded-full border-2 border-[#9575CD]">
                 </div>
             </header>
 
-            <div class="px-8 pb-8 flex flex-col lg:flex-row gap-8 flex-1">
+            <!-- Título no Mobile (Desce para baixo da logo) -->
+            <div class="md:hidden px-6 pb-6">
+                <h2 class="text-xl font-bold text-[#2A1A4A]">Guia Local</h2>
+                <p class="text-xs text-gray-500 mt-1">Conecte-se com especialistas ou fale com a IA.</p>
+            </div>
+
+            <!-- Grid do Conteúdo (Lista de Guias + Chat) -->
+            <div class="px-6 md:px-8 pb-8 flex flex-col lg:flex-row gap-6 md:gap-8 flex-1">
+                
                 <!-- Galeria de Guias Locais Reais -->
-                <div class="lg:w-1/2 bg-white rounded-2xl p-6 shadow-sm border border-gray-100 flex flex-col">
+                <div class="lg:w-1/2 bg-white rounded-2xl p-5 md:p-6 shadow-sm border border-gray-100 flex flex-col">
                     <div class="flex justify-between items-center mb-6">
-                        <h3 class="text-xl font-bold text-[#2A1A4A]">Nossos Guias Locais Reais</h3>
-                        <button class="text-gray-400 hover:text-[#9575CD] transition-colors"><i class="fa-solid fa-sliders"></i> Filtrar</button>
+                        <h3 class="text-lg md:text-xl font-bold text-[#2A1A4A]">Guias Locais</h3>
+                        <button class="text-gray-400 hover:text-[#9575CD] transition-colors text-sm md:text-base"><i class="fa-solid fa-sliders"></i> Filtrar</button>
                     </div>
                     
-                    <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                    <div class="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
                         <div class="aspect-square rounded-2xl overflow-hidden group cursor-pointer relative">
                             <img src="https://picsum.photos/id/1011/300/300" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
                             <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-3"><p class="text-white font-bold text-sm">Mariana</p></div>
@@ -106,49 +127,89 @@
                     </div>
                 </div>
 
-                <!-- Interface de Chat -->
-                <div class="lg:w-1/2 bg-white rounded-2xl shadow-sm border border-gray-100 flex flex-col overflow-hidden">
-                    <div class="p-4 border-b border-gray-100 flex items-center justify-between bg-white">
+                <!-- Interface de Chat com a Lia -->
+                <div class="lg:w-1/2 h-[500px] lg:h-auto bg-white rounded-2xl shadow-sm border border-gray-100 flex flex-col overflow-hidden">
+                    <div class="p-3 md:p-4 border-b border-gray-100 flex items-center justify-between bg-white">
                         <div class="flex items-center gap-3">
                             <div class="relative">
-                                <img src="https://picsum.photos/id/90/150/150" class="w-12 h-12 rounded-full border-2 border-[#F3E5F5]">
-                                <div class="w-3 h-3 bg-green-500 rounded-full absolute bottom-0 right-0 border-2 border-white"></div>
+                                <img src="https://picsum.photos/id/90/150/150" class="w-10 h-10 md:w-12 md:h-12 rounded-full border-2 border-[#F3E5F5]">
+                                <div class="w-2.5 h-2.5 md:w-3 md:h-3 bg-green-500 rounded-full absolute bottom-0 right-0 border-2 border-white"></div>
                             </div>
                             <div>
-                                <h3 class="text-base font-bold text-[#2A1A4A]">Lia</h3>
-                                <p class="text-xs text-gray-500">Inteligência Artificial TuriQuest</p>
+                                <h3 class="text-sm md:text-base font-bold text-[#2A1A4A]">Lia</h3>
+                                <p class="text-[10px] md:text-xs text-gray-500">Inteligência Artificial TuriQuest</p>
                             </div>
                         </div>
-                        <button class="text-gray-400 hover:text-gray-600 transition-colors w-10 h-10 rounded-full hover:bg-gray-50 flex items-center justify-center"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+                        <button class="text-gray-400 hover:text-gray-600 transition-colors w-8 h-8 md:w-10 md:h-10 rounded-full hover:bg-gray-50 flex items-center justify-center"><i class="fa-solid fa-ellipsis-vertical"></i></button>
                     </div>
 
-                    <div class="p-6 flex-1 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] bg-gray-50/50 flex flex-col gap-4 overflow-y-auto">
+                    <!-- Área de Mensagens -->
+                    <div class="p-4 md:p-6 flex-1 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] bg-gray-50/50 flex flex-col gap-4 overflow-y-auto">
                         <div class="flex items-end gap-2 max-w-[85%] self-start">
-                            <img src="https://picsum.photos/id/90/150/150" class="w-8 h-8 rounded-full mb-1">
-                            <div class="bg-white border border-gray-100 text-[#2A1A4A] p-3 px-4 rounded-2xl rounded-bl-sm shadow-sm text-sm">
+                            <img src="https://picsum.photos/id/90/150/150" class="w-6 h-6 md:w-8 md:h-8 rounded-full mb-1">
+                            <div class="bg-white border border-gray-100 text-[#2A1A4A] p-2 md:p-3 px-3 md:px-4 rounded-2xl rounded-bl-sm shadow-sm text-xs md:text-sm">
                                 Oi, sou a Lia!<br>Estou aqui para te ajudar a ter a melhor experiência na sua viagem.
                             </div>
                         </div>
-                        <div class="bg-[#9575CD] text-white p-3 px-4 rounded-2xl rounded-br-sm shadow-sm text-sm self-end max-w-[80%]">O que fazer em Salvador?</div>
-                        <div class="flex items-end gap-2 max-w-[85%] self-start">
-                            <img src="https://picsum.photos/id/90/150/150" class="w-8 h-8 rounded-full mb-1">
-                            <div class="bg-white border border-gray-100 text-[#2A1A4A] p-3 px-4 rounded-2xl rounded-bl-sm shadow-sm text-sm">Quais restaurantes você recomenda por aqui?</div>
+                        <div class="bg-[#9575CD] text-white p-2 md:p-3 px-3 md:px-4 rounded-2xl rounded-br-sm shadow-sm text-xs md:text-sm self-end max-w-[80%]">
+                            O que fazer em Salvador?
                         </div>
-                        <div class="bg-[#9575CD] text-white p-3 px-4 rounded-2xl rounded-br-sm shadow-sm text-sm self-end max-w-[80%]">Me ajuda a montar um roteiro de 3 dias.</div>
                         <div class="flex items-end gap-2 max-w-[85%] self-start">
-                            <img src="https://picsum.photos/id/90/150/150" class="w-8 h-8 rounded-full mb-1">
-                            <div class="bg-white border border-gray-100 text-[#2A1A4A] p-3 px-4 rounded-2xl rounded-bl-sm shadow-sm text-sm">Qual a previsão do tempo?</div>
+                            <img src="https://picsum.photos/id/90/150/150" class="w-6 h-6 md:w-8 md:h-8 rounded-full mb-1">
+                            <div class="bg-white border border-gray-100 text-[#2A1A4A] p-2 md:p-3 px-3 md:px-4 rounded-2xl rounded-bl-sm shadow-sm text-xs md:text-sm">
+                                Quais restaurantes você recomenda por aqui?
+                            </div>
+                        </div>
+                        <div class="bg-[#9575CD] text-white p-2 md:p-3 px-3 md:px-4 rounded-2xl rounded-br-sm shadow-sm text-xs md:text-sm self-end max-w-[80%]">
+                            Me ajuda a montar um roteiro de 3 dias.
+                        </div>
+                        <div class="flex items-end gap-2 max-w-[85%] self-start">
+                            <img src="https://picsum.photos/id/90/150/150" class="w-6 h-6 md:w-8 md:h-8 rounded-full mb-1">
+                            <div class="bg-white border border-gray-100 text-[#2A1A4A] p-2 md:p-3 px-3 md:px-4 rounded-2xl rounded-bl-sm shadow-sm text-xs md:text-sm">
+                                Qual a previsão do tempo?
+                            </div>
                         </div>
                     </div>
 
-                    <div class="p-4 bg-white border-t border-gray-100 flex items-center gap-3">
-                        <button class="text-gray-400 hover:text-[#9575CD] transition-colors w-10 h-10 flex items-center justify-center rounded-full hover:bg-gray-50"><i class="fa-solid fa-paperclip"></i></button>
-                        <input type="text" placeholder="Digite sua mensagem..." class="flex-1 bg-gray-100/80 rounded-full px-5 py-3 text-sm outline-none border border-transparent focus:border-[#F3E5F5] focus:bg-white transition-all text-gray-700 placeholder-gray-400">
-                        <button class="w-12 h-12 bg-[#9575CD] text-white rounded-full flex items-center justify-center hover:bg-[#7e5eb3] transition-colors shadow-md hover:shadow-lg"><i class="fa-solid fa-paper-plane"></i></button>
+                    <!-- Input de Digitação -->
+                    <div class="p-3 md:p-4 bg-white border-t border-gray-100 flex items-center gap-2 md:gap-3">
+                        <button class="text-gray-400 hover:text-[#9575CD] transition-colors w-8 h-8 md:w-10 md:h-10 flex items-center justify-center rounded-full hover:bg-gray-50"><i class="fa-solid fa-paperclip"></i></button>
+                        <input type="text" placeholder="Sua mensagem..." class="flex-1 bg-gray-100/80 rounded-full px-4 py-2.5 md:py-3 text-xs md:text-sm outline-none border border-transparent focus:border-[#F3E5F5] focus:bg-white transition-all text-gray-700 placeholder-gray-400">
+                        <button class="w-10 h-10 md:w-12 md:h-12 bg-[#9575CD] text-white rounded-full flex items-center justify-center hover:bg-[#7e5eb3] transition-colors shadow-md hover:shadow-lg shrink-0"><i class="fa-solid fa-paper-plane text-sm"></i></button>
                     </div>
                 </div>
+
             </div>
         </main>
+
+        <!-- ========================================== -->
+        <!-- MENU INFERIOR MOBILE (SÓ APARECE NO CELULAR)-->
+        <!-- ========================================== -->
+        <nav class="md:hidden fixed bottom-0 left-0 w-full bg-white flex justify-around items-center pt-3 pb-6 px-2 border-t border-gray-100 rounded-t-2xl shadow-[0_-5px_15px_rgba(0,0,0,0.05)] z-50">
+            <a href="index.html" class="flex flex-col items-center gap-1 text-gray-400 hover:text-[#9575CD]">
+                <i class="fa-solid fa-house text-xl"></i>
+                <span class="text-[10px] font-medium">Início</span>
+            </a>
+            <a href="explorar.html" class="flex flex-col items-center gap-1 text-gray-400 hover:text-[#9575CD]">
+                <i class="fa-solid fa-magnifying-glass text-xl"></i>
+                <span class="text-[10px] font-medium">Explorar</span>
+            </a>
+            
+            <!-- Botão Central (Bússola) com estilo Flutuante -->
+            <a href="#" class="w-12 h-12 bg-[#6a48d7] rounded-full flex items-center justify-center text-white text-2xl -mt-8 shadow-[0_5px_15px_rgba(106,72,215,0.4)]">
+                <i class="fa-regular fa-compass"></i>
+            </a>
+
+            <a href="viagem.html" class="flex flex-col items-center gap-1 text-gray-400 hover:text-[#9575CD]">
+                <i class="fa-solid fa-suitcase-rolling text-xl"></i>
+                <span class="text-[10px] font-medium">Viagem</span>
+            </a>
+            <a href="perfil.html" class="flex flex-col items-center gap-1 text-gray-400 hover:text-[#9575CD]">
+                <i class="fa-regular fa-user text-xl"></i>
+                <span class="text-[10px] font-medium">Perfil</span>
+            </a>
+        </nav>
+
     </div>
 </body>
 </html>
